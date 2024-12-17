@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MaintenanceExpertRepository extends JpaRepository<MaintenanceExpert,Integer> {
-    MaintenanceExpert findMaintenanceExpertBy(Integer id);
+    MaintenanceExpert findMaintenanceExpertById(Integer id);
 }

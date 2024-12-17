@@ -37,7 +37,7 @@ public class Company {
     @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*^?&])[A-Za-z\\d@$!%*^?&]{8,}$", message = "Password must be at least 8 characters long and contain one uppercase letter, one lowercase letter, one digit, and one special character.")
     private String password;
     @Column(columnDefinition = "boolean default false ")
-    private Boolean aproved=false;
+    private Boolean isApproved=false;
 
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "company")

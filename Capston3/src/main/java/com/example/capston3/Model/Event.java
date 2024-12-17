@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Set;
 
 @Setter
@@ -22,9 +21,6 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(columnDefinition = "int not null")
-    @NotNull(message = "Empty company id")
-    private Integer companyId;
     @Column(columnDefinition = "varchar(60) not null")
     @NotEmpty(message = "Empty name")
     private String name;
@@ -34,7 +30,7 @@ public class Event {
     @Column(columnDefinition = "varchar(200) not null")
     @NotEmpty(message = "Empty details")
     private String details;
-    @Column(nullable = false)
+    @Column(columnDefinition = "DATE not null")
     @NotNull(message = "Empty Date")
     private LocalDate date;
 

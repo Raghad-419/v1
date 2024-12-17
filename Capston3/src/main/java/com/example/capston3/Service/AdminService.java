@@ -36,5 +36,18 @@ public class AdminService {
         if(oldAdmin==null){
             throw new ApiException("Admin not found");
         }
+        oldAdmin.setEmail(admin.getEmail());
+        oldAdmin.setName(admin.getName());
+        adminRepository.save(oldAdmin);
     }
+
+
+    public void deleteAdmin(Integer id){
+        Admin admin = adminRepository.findAdminById(id);
+        if(admin==null){
+            throw new ApiException("Admin not found");
+        }
+        adminRepository.delete(admin);
+    }
+
 }
